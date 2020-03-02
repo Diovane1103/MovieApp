@@ -1,0 +1,1 @@
+module.exports = require('moviedb')(process.env.API_KEY)
