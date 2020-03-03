@@ -1,6 +1,5 @@
 const express = require('express')
 const cors = require('cors')
-const dotenv = require('dotenv')
 const bodyParser = require('body-parser')
 
 const search = require('./routers/search.js')
@@ -16,7 +15,6 @@ const discover = require('./routers/discover.js')
 
 const app = express()
 
-dotenv.config()
 app.use(cors())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -31,6 +29,5 @@ app.use('/misc', misc)
 app.use('/auth', auth)
 app.use('/account', account)
 app.use('/discover', discover)
-
 
 module.exports = app
