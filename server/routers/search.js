@@ -2,70 +2,63 @@ const express = require('express')
 const db = require('./../db/db.js')
 const router = new express.Router()
 
-router.get('/movie/', async (req, res) => {
-    const body = req.query
+router.get('/movie', async (req, res) => {
     try {
-        const data = await db.v3Client.search.movies(body)
+        const data = await db.v3Client.search.movies(req.query)
         res.status(200).send(data)
     } catch (error) {
         res.status(500).send({ msg: error })
     }
 })
 
-router.get('/tv/', async (req, res) => {
-    const body = req.query
+router.get('/tv', async (req, res) => {
     try {
-        const data = await db.v3Client.search.tv(body)
+        const data = await db.v3Client.search.tv(req.query)
         res.status(200).send(data)
     } catch (error) {
         res.status(500).send({ msg: error })
     }
 })
 
-router.get('/company/', async (req, res) => {
-    const body = req.query
+router.get('/company', async (req, res) => {
     try {
-        const data = await db.v3Client.search.companies(body)
+        const data = await db.v3Client.search.companies(req.query)
         res.status(200).send(data)
     } catch (error) {
         res.status(500).send({ msg: error })
     }
 })
 
-router.get('/multi/', async (req, res) => {
-    const body = req.query
+router.get('/multi', async (req, res) => {
     try {
-        const data = await db.v3Client.search.multi(body)
+        const data = await db.v3Client.search.multi(req.query)
         res.status(200).send(data)
     } catch (error) {
         res.status(500).send({ msg: error })
     }
 })
 
-router.get('/collection/', async (req, res) => {
-    const body = req.query
+router.get('/collection', async (req, res) => {
     try {
-        const data = await db.v3Client.search.collections(body)
+        const data = await db.v3Client.search.collections(req.query)
         res.status(200).send(data)
     } catch (error) {
         res.status(500).send({ msg: error })
     }
 })
 
-router.get('/person/', async (req, res) => {
-    const body = req.query
+router.get('/person', async (req, res) => {
     try {
-        const data = await db.v3Client.search.people(body)
+        const data = await db.v3Client.search.people(req.query)
         res.status(200).send(data)
     } catch (error) {
         res.status(500).send({ msg: error })
     }
 })
 
-router.get('/keyword/', async (req, res) => {
-    const body = req.query
+router.get('/keyword', async (req, res) => {
     try {
-        const data = await db.v3Client.search.keywords(body)
+        const data = await db.v3Client.search.keywords(req.query)
         res.status(200).send(data)
     } catch (error) {
         res.status(500).send({ msg: error })
