@@ -2,7 +2,7 @@ const express = require('express')
 const db = require('./../db/db')
 const router = new express.Router()
 
-router.get('/movie', async (req, res) => {
+router.get('/movie', auth, async (req, res) => {
     try {
         const certification = await db.v3Client.certification.movies()
         res.status(200).send(certification)
